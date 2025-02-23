@@ -1,42 +1,41 @@
 Verktyget ska innehålla en README-fil med instruktioner om hur verktyget används, exempelkörningar och kända begränsningar.
-# Verktygslåda
-## Introduktion
-Detta projekt är en verktygslåda med en samling projekt och verktyg designade för att vara relevant för it-säkerhet. Verktygen är, generera en nyckel för att kryptera och dekryptera, möjligheten för att kryptera och dekryptera, hasha lösenord, knäcka hashade lösenord, skanna ip adresser med hjälp av Nmap.
+# Toolbox
+## Introduction
+This project is a toolbox containing a collection of projects and tools designed to be relevant for cybersecurity. The tools include generating a key for encryption and decryption, encrypting and decrypting data, hashing passwords, cracking hashed passwords, and scanning IP addresses using Nmap.
 
-## Verktyg 1 (generate_key)
-För att generera en nyckel så kan man köra denna kommandorad:  
+## Tool 1 (generate_key)
+To generate a key, run the following command: 
 python main_toolbox.py --tool generate_key secret
 
-## Verktyg 2 (crypto_tool)
-För att kryptera text med den skapna nyckeln så kan man köra denna kommandorad:   
-python main_toolbox.py --tool crypto --mode kryptera --message "Hemlig text" secret.key hemlig.txt  
+## Tool 2 (crypto_tool)
+To encrypt text using the generated key, run the following command:   
+python main_toolbox.py --tool crypto --mode encrypt --message "Secret text" secret.key secret.txt 
 
-För att dekryptera en text med den skapna nyckeln så kan man köra följande kommandorad:  
-python main_toolbox.py --tool crypto --mode dekryptera secret.key hemlig.txt
+To decrypt text using the generated key, run the following command:  
+python main_toolbox.py --tool crypto --mode decrypt secret.key secret.txt
 
-## Verktyg 3 (hash_password)
-För att hasha ett lösenord så kan man köra denna kommando:  
+## Tool 3 (hash_password)
+To hash a password, run the following command:  
 python main_toolbox.py --tool hash_password --password password1234 --algorithm bcrypt
 
-## Verktyg 4 (crack_hashes)
-För att knäcka hashes med exempelvis bcrypt algoritm så kan man använda denna kommandorad:  
-python main_toolbox.py --tool crack_hashes --mode scan_a_hash --hash "skriv in hashen här" passwords.txt bcrypt
+## Tool 4 (crack_hashes)
+To crack hashes using, for example, the bcrypt algorithm, run the following command:  
+python main_toolbox.py --tool crack_hashes --mode scan_a_hash --hash "insert hash here" passwords.txt bcrypt
 
-## Verktyg 5 (nmap)
-För att använda skanna tcp portar med hjälp av nmap så kan man skriva en sånhär kommandorad:  
-python main_toolbox.py --tool nmap --mode single_ip --scan_type syn --ip_addr "skriv ip adressen du vill skanna här"
+Tool 5 (nmap)
+To scan TCP ports using Nmap, run the following command: 
+python main_toolbox.py --tool nmap --mode single_ip --scan_type syn --ip_addr "insert the IP address you want to scan here"
 
 
-## Kända begränsningar
+## Known Limitations
 Nmap:
-Firewall och IDS: Nmap-skanningar kan blockeras av brandväggar och intrångsdetekteringssystem, vilket påverkar resultaten.
-Timing och hastighet: Snabba skanningar kan leda till paketförlust, medan långsamma skanningar tar längre tid och kan vara ineffektiva.
-Root-rättigheter: Vissa funktioner kräver administratörsrättigheter, vilket kan begränsa användningen.
+- Firewalls and IDS: Nmap scans can be blocked by firewalls and intrusion detection systems, affecting the results.
+- Timing and speed: Fast scans may result in packet loss, while slow scans take longer and may be inefficient.
+- Root privileges: Some functions require administrative privileges, which can limit usability.
 
 Hashing:
-Kollisionsrisk: Vissa hashing-algoritmer (t.ex. MD5, SHA-1) har kända kollisionsproblem, vilket kan kompromettera säkerheten.
-Hash-längd: Kortare hash-längder är mer utsatta för brute-force-attacker.
+- Collision risk: Some hashing algorithms (e.g., MD5, SHA-1) have known collision vulnerabilities, which can compromise security.
+- Hash length: Shorter hash lengths are more susceptible to brute-force attacks.
 
 Kryptering:
-Nyckelhantering: Säkerhet beror på hur nycklar hanteras; dålig nyckelhantering kan leda till allvarliga sårbarheter.
- 
+- Key management: Security depends on how keys are managed; poor key management can lead to severe vulnerabilities.
