@@ -1,4 +1,3 @@
-Verktyget ska innehålla en README-fil med instruktioner om hur verktyget används, exempelkörningar och kända begränsningar.
 # Toolbox
 ## Introduction
 This project is a toolbox containing a collection of projects and tools designed to be relevant for cybersecurity. The tools include generating a key for encryption and decryption, encrypting and decrypting data, hashing passwords, cracking hashed passwords, and scanning IP addresses using Nmap.
